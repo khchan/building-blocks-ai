@@ -1,5 +1,8 @@
 # building-blocks-ai
 
+## Prerequisites
+* https://ollama.com/ for local models
+
 ## Setup
 1. Create a virtual environment called `venv` - this should create a folder called `venv` where project-specific dependencies will live:
 ```
