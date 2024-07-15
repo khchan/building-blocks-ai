@@ -8380,6 +8380,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Initializing Kernel</strong></p>
+<p>Configures the LLM available to an instance of Semantic Kernel:</p>
 </div>
 </div>
 </div>
@@ -8425,6 +8426,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Initializing Native Plugins</strong></p>
+<p>Defines types and functions the LLM has access to:</p>
 </div>
 </div>
 </div>
@@ -8433,11 +8435,12 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [326]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [334]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">TypedDict</span><span class="p">,</span> <span class="n">Annotated</span>
 <span class="kn">from</span> <span class="nn">semantic_kernel.functions</span> <span class="kn">import</span> <span class="n">kernel_function</span>
+<span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">class</span> <span class="nc">Weather</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
     <span class="n">location</span><span class="p">:</span> <span class="nb">str</span>
@@ -8449,8 +8452,10 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
       <span class="n">name</span><span class="o">=</span><span class="s2">"get_weather"</span><span class="p">,</span>
       <span class="n">description</span><span class="o">=</span><span class="s2">"Get the current weather in a given location"</span><span class="p">,</span>
    <span class="p">)</span>
-   <span class="k">def</span> <span class="nf">get_weather</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Annotated</span><span class="p">[</span><span class="n">Weather</span><span class="p">,</span> <span class="s2">"The weather for a given location"</span><span class="p">]:</span>
-      <span class="k">return</span> <span class="n">Weather</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">"Toronto"</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">"celsius"</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+   <span class="k">def</span> <span class="nf">get_weather</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+                   <span class="n">location</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s2">"Location to retrieve weather for"</span><span class="p">],</span> 
+                   <span class="n">unit</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s2">"celsius or fahrenheit"</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Annotated</span><span class="p">[</span><span class="n">Weather</span><span class="p">,</span> <span class="s2">"The weather for a given location"</span><span class="p">]:</span>
+      <span class="k">return</span> <span class="n">Weather</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -8464,6 +8469,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Executing the Kernel</strong></p>
+<p>Same canonical example as the previous section, but SK automatically invokes our native Python functions for us automatically!</p>
 </div>
 </div>
 </div>
@@ -8472,7 +8478,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [327]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [350]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">semantic_kernel.connectors.ai.open_ai</span> <span class="kn">import</span> <span class="n">AzureChatCompletion</span><span class="p">,</span> <span class="n">AzureChatPromptExecutionSettings</span>
@@ -8492,7 +8498,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 
 <span class="c1"># Create a history of the conversation</span>
 <span class="n">history</span> <span class="o">=</span> <span class="n">ChatHistory</span><span class="p">()</span>
-<span class="n">history</span><span class="o">.</span><span class="n">add_message</span><span class="p">({</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"What's the weather in Toronto?"</span><span class="p">})</span>
+<span class="n">history</span><span class="o">.</span><span class="n">add_message</span><span class="p">({</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"What's the weather in Toronto and San Antonio in freedom units?"</span><span class="p">})</span>
 
 <span class="c1"># Get the response from the AI</span>
 <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="k">await</span> <span class="n">chat_completion</span><span class="o">.</span><span class="n">get_chat_message_contents</span><span class="p">(</span>
@@ -8516,7 +8522,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Assistant &gt; The current temperature in Toronto is 30°C.
+<pre>Assistant &gt; Currently, the weather in Toronto is 96°F and the weather in San Antonio is 25°F.
 </pre>
 </div>
 </div>
