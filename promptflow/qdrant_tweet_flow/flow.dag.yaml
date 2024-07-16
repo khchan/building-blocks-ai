@@ -1,0 +1,39 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  topic:
+    type: string
+    default: Microsoft
+outputs:
+  tweet:
+    type: string
+    reference: ${ollama.output}
+  references:
+    type: string
+    reference: ${qdrant_doc_lookup.output}
+nodes:
+- name: qdrant_doc_lookup
+  type: python
+  source:
+    type: code
+    path: qdrant_doc_lookup.py
+  inputs:
+    query: ${inputs.topic}
+- name: tweet_prompt
+  type: prompt
+  source:
+    type: code
+    path: tweet_prompt.jinja2
+  inputs:
+    topic: ${inputs.topic}
+    qdrant_docs: ${qdrant_doc_lookup.output}
+- name: ollama
+  type: python
+  source:
+    type: code
+    path: ollama.py
+  inputs:
+    tweet_request: ${tweet_prompt.output}
+    model: gemma2:9b
+  aggregation: false

@@ -1,0 +1,9 @@
+Write a short tweet less than 200 words about the following topic: {{ topic }}.
+
+Refer to the following resources from Qdrant documentation in your tweet:
+{% for doc in qdrant_docs %}
+### Resource #{{loop.index}}
+- Text: {{doc.text}}
+- URL: {{doc.url}}
+- Titles: {{doc.titles}}
+{% endfor %}

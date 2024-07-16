@@ -14,3 +14,4 @@ tiktoken==0.7.0
 qdrant-client==1.9.1
 instructor==1.3.4
 semantic-kernel==1.2.0
+sentence-transformers==3.0.1
