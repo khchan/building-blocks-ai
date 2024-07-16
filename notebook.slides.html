@@ -7444,9 +7444,9 @@ main {
 <li>Chat Completions<ul>
 <li>Message Types</li>
 <li>Request Parameters</li>
-<li>Prompt Engineering</li>
 <li>Structured Output</li>
 <li>Function Calling</li>
+<li>Agents with Semantic Kernel</li>
 </ul>
 </li>
 <li>Retrieval Augmented Generation<ul>
@@ -7562,7 +7562,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [78]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
@@ -7601,7 +7601,9 @@ main {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Right, listen up, you muppet. Crack two eggs into a bowl, whisk 'em like you mean it. Splash in a bit of milk, salt and pepper. Fry a knob of butter in a pan, chuck the eggs in, then scramble them about till they're set. Fold it over, plate it up, and for God's sake, don't burn it. Now get outta my kitchen!  
+<pre>Right, listen up, you want an omelette?  Crack two eggs, whisk 'em like your life depends on it, chuck in a knob of butter, scramble that lot till it's just set, fold it over, and get out the way. 
+
+And for God's sake, don't call me when it burns! 
 </pre>
 </div>
 </div>
@@ -7668,7 +7670,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [72]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">AzureOpenAI</span>
@@ -7696,7 +7698,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [209]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">instruction</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -7790,7 +7792,7 @@ token 2:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [210]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">AzureOpenAI</span>
@@ -7818,7 +7820,7 @@ token 2:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [229]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
@@ -7846,16 +7848,16 @@ token 2:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Steaming bowl of broth
-Noodles, herbs, and meat abound
+<pre>Savory broth steams
+Soft noodles and fresh herbs float
 Pho warms body, soul
 
 Steaming bowl of pho
-Broth so rich, noodles so fine
+Rich broth, tender meats, and herbs
 Comfort in a bowl
 
 Steaming broth and noodles
-Herbs and meat in harmony
+Herbs and spices blending well
 Pho warms the soul deep
 
 </pre>
@@ -7864,31 +7866,6 @@ Pho warms the soul deep
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d7740dad-5d58-448d-8195-641d5c2025b6">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Prompt-Engineering">Prompt Engineering<a class="anchor-link" href="#Prompt-Engineering">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ac080799-a123-472b-b2ca-144622a89c65">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"hello world!"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cdfff9dc-3f02-4fb0-a67a-99f71b5fa0d5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7922,7 +7899,7 @@ Pho warms the soul deep
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [237]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -7965,31 +7942,12 @@ Pho warms the soul deep
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'name': 'Pancakes', 'style': 'American'}</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'name': 'Scrambled Eggs with Toast', 'style': 'Classic'}</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'name': 'Oatmeal with Berries', 'style': 'Healthy'}</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'name': 'Breakfast Burrito', 'style': 'Mexican'}</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'name': 'Yogurt Parfait', 'style': 'Light'}</pre>
+<pre>{'name': 'Pancakes with Berries and Syrup', 'style': 'American classic'}
+{'name': 'Avocado Toast with Egg', 'style': 'Healthy and modern'}
+{'name': 'Scrambled Eggs with Smoked Salmon', 'style': 'Gourmet breakfast'}
+{'name': 'Breakfast Burrito', 'style': 'Tex-Mex'}
+{'name': 'Yogurt Parfait with Granola and Fruit', 'style': 'Light and refreshing'}
+</pre>
 </div>
 </div>
 </div>
@@ -8055,7 +8013,7 @@ Pho warms the soul deep
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [244]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
@@ -8063,12 +8021,12 @@ Pho warms the soul deep
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 <span class="kn">import</span> <span class="nn">instructor</span>
 
-<span class="k">class</span> <span class="nc">DishList</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">dishes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dish</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"Contains a list of dish objects containing name and style"</span><span class="p">)</span>
-
 <span class="k">class</span> <span class="nc">Dish</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"The dish type i.e. Mexican, Japanese etc."</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">DishList</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">dishes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dish</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"Contains a list of dish objects containing name and style"</span><span class="p">)</span>
 
 <span class="n">ollama_client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="s2">"http://localhost:11434/v1"</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">"ollama"</span><span class="p">)</span>
 <span class="n">instructor_client</span> <span class="o">=</span> <span class="n">instructor</span><span class="o">.</span><span class="n">from_openai</span><span class="p">(</span><span class="n">ollama_client</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">instructor</span><span class="o">.</span><span class="n">Mode</span><span class="o">.</span><span class="n">JSON</span><span class="p">)</span>
@@ -8108,11 +8066,11 @@ Pho warms the soul deep
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Dish: Pancakes, Style: American
-Dish: Scrambled Eggs, Style: Western
+<pre>Dish: Pancakes with maple syrup, Style: American
 Dish: Breakfast Burrito, Style: Mexican
-Dish: Avocado Toast, Style: Modern
-Dish: Oatmeal with Berries, Style: Healthy
+Dish: Eggs Benedict, Style: Continental
+Dish: Smoked Salmon and Bagel, Style: Jewish Deli
+Dish: Yogurt Parfait with granola and berries, Style: Healthy
 </pre>
 </div>
 </div>
@@ -8177,7 +8135,7 @@ Dish: Oatmeal with Berries, Style: Healthy
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">weather_tool</span> <span class="o">=</span> <span class="p">{</span>
@@ -8226,7 +8184,7 @@ Dish: Oatmeal with Berries, Style: Healthy
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [269]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">AzureOpenAI</span>
@@ -8296,7 +8254,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [270]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
@@ -8342,8 +8300,8 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class '__main__.Weather'&gt; location='Toronto, ON' units='celsius'
-&lt;class '__main__.Weather'&gt; location='Dallas, TX' units='celsius'
+<pre>&lt;class '__main__.Weather'&gt; location='Toronto, Canada' units='celsius'
+&lt;class '__main__.Weather'&gt; location='Dallas, Texas' units='celsius'
 &lt;class '__main__.GoogleSearch'&gt; query='super bowl winner'
 </pre>
 </div>
@@ -8357,7 +8315,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Semantic-Kernel">Semantic Kernel<a class="anchor-link" href="#Semantic-Kernel">¶</a></h3><p>An <a href="https://learn.microsoft.com/en-us/semantic-kernel/overview/">open-source library</a> that lets you build AI agents and integrate the latest AI models with bindings in C#, Python, and Java.</p>
+<h2 id="Agents-with-Semantic-Kernel">Agents with Semantic Kernel<a class="anchor-link" href="#Agents-with-Semantic-Kernel">¶</a></h2><p>Semantic Kernel is an <a href="https://learn.microsoft.com/en-us/semantic-kernel/overview/">open-source library from MSFT</a> that lets you build AI agents and integrate the latest AI models with bindings in C#, Python, and Java.</p>
 </div>
 </div>
 </div>
@@ -8368,19 +8326,27 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>For this talk, we'll focus on SK within the lens of function calling.</p>
+<p>An "agent" in Semantic Kernel consists of:</p>
+<ul>
+<li><code>Persona</code>: Instruction / meta prompt setting the overall purpose of the agent</li>
+<li><code>Kernel</code>: Central DI container that orchestrates LLM logic<ul>
+<li><code>AI Service(s)</code>: LLMs the <code>Kernel</code> has access to</li>
+<li><code>Plugin(s)</code>: Functions/tools the <code>Kernel</code> can use to complete tasks</li>
+<li><code>Planner(s)</code>: Workflows the <code>Kernel</code> generates using a combination of <code>AI Service(s)</code> and <code>Plugin(s)</code> for task planning</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div></div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=23b7dc26-a130-4c4d-9a1c-89d63aa9b7e5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d038b169-c565-43ae-9c86-f5e20f778ddf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Initializing Kernel</strong></p>
-<p>Configures the LLM available to an instance of Semantic Kernel:</p>
+<p><strong>Initializing a Kernel</strong></p>
 </div>
 </div>
 </div>
@@ -8389,11 +8355,11 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [325]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">semantic_kernel</span> <span class="kn">import</span> <span class="n">Kernel</span>
-<span class="kn">from</span> <span class="nn">semantic_kernel.connectors.ai.open_ai</span> <span class="kn">import</span> <span class="n">AzureChatCompletion</span>
+<span class="kn">from</span> <span class="nn">semantic_kernel.connectors.ai.open_ai</span> <span class="kn">import</span> <span class="n">AzureChatCompletion</span><span class="p">,</span> <span class="n">AzureChatPromptExecutionSettings</span>
 <span class="kn">from</span> <span class="nn">azure.identity</span> <span class="kn">import</span> <span class="n">DefaultAzureCredential</span><span class="p">,</span> <span class="n">get_bearer_token_provider</span>
 <span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 
@@ -8435,7 +8401,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [334]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">TypedDict</span><span class="p">,</span> <span class="n">Annotated</span>
@@ -8468,8 +8434,11 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Executing the Kernel</strong></p>
-<p>Same canonical example as the previous section, but SK automatically invokes our native Python functions for us automatically!</p>
+<p><strong>Executing a Standalone Kernel</strong></p>
+<ul>
+<li>SK bridges the gap by taking the functions the LLM predicted and calling them automatically in our code.</li>
+<li>Under the hood, it uses parallel function calling as the default planner implementation</li>
+</ul>
 </div>
 </div>
 </div>
@@ -8478,7 +8447,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [350]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">semantic_kernel.connectors.ai.open_ai</span> <span class="kn">import</span> <span class="n">AzureChatCompletion</span><span class="p">,</span> <span class="n">AzureChatPromptExecutionSettings</span>
@@ -8522,7 +8491,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Assistant &gt; Currently, the weather in Toronto is 96°F and the weather in San Antonio is 25°F.
+<pre>Assistant &gt; The current weather in Toronto is 73°F and in San Antonio is 34°F.
 </pre>
 </div>
 </div>
@@ -8550,16 +8519,29 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0dcbccff-ad10-4c5e-889d-6996876a199c">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0dcbccff-ad10-4c5e-889d-6996876a199c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"hello world!"</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>hello world!
+</pre>
 </div>
 </div>
 </div>
@@ -8575,16 +8557,29 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6498093e-d3b7-47ec-af17-730809b31c42">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6498093e-d3b7-47ec-af17-730809b31c42">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"hello world!"</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>hello world!
+</pre>
 </div>
 </div>
 </div>
@@ -8600,16 +8595,29 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2bd08a7c-abe9-4731-b4a7-b584d5165044">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2bd08a7c-abe9-4731-b4a7-b584d5165044">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"hello world!"</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>hello world!
+</pre>
 </div>
 </div>
 </div>
@@ -8636,16 +8644,29 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fad28ac9-91ba-4bb9-855d-29cfbf168a9b">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fad28ac9-91ba-4bb9-855d-29cfbf168a9b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"hello world"</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>hello world
+</pre>
 </div>
 </div>
 </div>
@@ -8661,16 +8682,29 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5bd3c44a-7d75-4e70-bf92-760f75e759c7">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5bd3c44a-7d75-4e70-bf92-760f75e759c7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"hello world"</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>hello world
+</pre>
 </div>
 </div>
 </div>
