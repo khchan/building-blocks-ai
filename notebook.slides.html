@@ -7434,6 +7434,17 @@ main {
 <main>
 <div class="reveal">
 <div class="slides"><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7818828d-17fb-4369-9d32-0bc5730b04d7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Building-Blocks-of-Generative-AI-Applications">Building Blocks of Generative AI Applications<a class="anchor-link" href="#Building-Blocks-of-Generative-AI-Applications">¶</a></h1>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ffd641ad-1c89-4f5a-aa7d-4d6930207060">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7441,25 +7452,10 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Agenda">Agenda<a class="anchor-link" href="#Agenda">¶</a></h1><ol>
-<li>Chat Completions<ul>
-<li>Message Types</li>
-<li>Request Parameters</li>
-<li>Structured Output</li>
-<li>Function Calling</li>
+<li>Chat Completions</li>
 <li>Agents with Semantic Kernel</li>
-</ul>
-</li>
-<li>Retrieval Augmented Generation<ul>
-<li>Vector Databases</li>
-<li>Visualizing Semantic Similarity</li>
-<li>Hybrid Search and Reranking</li>
-</ul>
-</li>
-<li>Promptflow<ul>
-<li>Anatomy of a flow</li>
-<li>Evaluations + Benchmarking</li>
-</ul>
-</li>
+<li>Retrieval Augmented Generation</li>
+<li>Evaluation Methods with Promptflow</li>
 </ol>
 </div>
 </div>
@@ -7698,7 +7694,7 @@ You want fancy? Add cheese or somethin'.  Don't muck it up.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">instruction</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -7718,7 +7714,8 @@ You want fancy? Add cheese or somethin'.  Don't muck it up.
     <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-35-turbo"</span><span class="p">,</span>
     <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
         <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">instruction</span><span class="p">},</span>
-        <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"baby back ribs = "</span><span class="p">}</span>
+        <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"maple glaze = "</span><span class="p">},</span>
+        <span class="c1"># {"role": "user", "content": "maple glazed salmon = "},</span>
     <span class="p">],</span>
     <span class="n">logprobs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">top_logprobs</span><span class="o">=</span><span class="mi">3</span>
@@ -7742,15 +7739,11 @@ You want fancy? Add cheese or somethin'.  Don't muck it up.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Prediction: salty
+<pre>Prediction: sweet
 token 1:
-	top_logprobs: s, probability: 99.94
-	top_logprobs: S, probability: 0.05
-	top_logprobs: sweet, probability: 0.0
-token 2:
-	top_logprobs: alty, probability: 100.0
-	top_logprobs: we, probability: 0.0
-	top_logprobs: our, probability: 0.0
+	top_logprobs: sweet, probability: 98.6
+	top_logprobs: s, probability: 1.37
+	top_logprobs: Sweet, probability: 0.02
 </pre>
 </div>
 </div>
@@ -7899,7 +7892,7 @@ Warm comfort in a bowl
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -7942,11 +7935,11 @@ Warm comfort in a bowl
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'name': 'Pancakes', 'style': 'American'}
-{'name': 'Avocado Toast', 'style': 'Modern'}
-{'name': 'Oatmeal with Berries', 'style': 'Healthy'}
-{'name': 'Scrambled Eggs with Bacon', 'style': 'Classic'}
-{'name': 'Breakfast Burrito', 'style': 'Tex-Mex'}
+<pre>{'name': 'Blueberry Pancakes', 'style': 'American classic'}
+{'name': 'Avocado Toast with Poached Eggs', 'style': 'Modern &amp; healthy'}
+{'name': 'Breakfast Burrito', 'style': 'Mexican inspired'}
+{'name': 'Smoked Salmon Bagel', 'style': 'New York deli staple'}
+{'name': 'Oatmeal with Berries and Nuts', 'style': 'Quick &amp; wholesome'}
 </pre>
 </div>
 </div>
@@ -7981,7 +7974,7 @@ Warm comfort in a bowl
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="https://docs.pydantic.dev/latest/">Pydantic</a> is the defacto type validation library for Python powered by type annotations</p>
+<p><a href="https://docs.pydantic.dev/latest/">Pydantic</a> is the defacto type validation library for Python powered by type annotations:</p>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DishList</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">dishes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dish</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">"Contains a list of dish objects containing name and style"</span><span class="p">)</span>
 
@@ -7999,7 +7992,7 @@ Warm comfort in a bowl
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="https://python.useinstructor.com/why/">Instructor</a> is a library that shims various LLM provider with the ability to validate and return Pydantic types</p>
+<p><a href="https://python.useinstructor.com/why/">Instructor</a> is a library that shims various LLM providers with the ability to validate and return Pydantic types from chat completions:</p>
 <div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
     <span class="o">...</span><span class="p">,</span>
     <span class="n">response_model</span><span class="o">=</span><span class="n">DishList</span>
@@ -8083,25 +8076,22 @@ Dish: Yogurt Parfait, Style: Greek/Breakfast Bowls
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Function-Calling">Function Calling<a class="anchor-link" href="#Function-Calling">¶</a></h2><ul>
-<li>Open AI Tools</li>
-<li>Semantic Kernel</li>
-</ul>
+<h2 id="Function-Calling">Function Calling<a class="anchor-link" href="#Function-Calling">¶</a></h2>
 </div>
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=319dd985-74a1-462c-b160-b3a42bc6567f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Open-AI-Tools">Open AI Tools<a class="anchor-link" href="#Open-AI-Tools">¶</a></h3><p>Model is constrained to predict which function(s) and argument(s) should be called to achieve a task.</p>
+<p>Model is constrained to predict which function(s) and argument(s) should be called to achieve a task.</p>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div></div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b75f0d6b-17b8-416e-9daf-5fd6651af949">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8245,7 +8235,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Example-with-Instructor">Example with Instructor<a class="anchor-link" href="#Example-with-Instructor">¶</a></h3>
+<h3 id="Function-Calling-Example-with-Instructor">Function Calling Example with Instructor<a class="anchor-link" href="#Function-Calling-Example-with-Instructor">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8308,14 +8298,25 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6d6032bb-df22-47ab-ae90-eb58ee238cc0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Up-Next:-Agents-with-Semantic-Kernel">Up Next: Agents with Semantic Kernel<a class="anchor-link" href="#Up-Next:-Agents-with-Semantic-Kernel">¶</a></h2>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7be0d34f-6e2b-44f9-aff6-2d5672674807">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Agents-with-Semantic-Kernel">Agents with Semantic Kernel<a class="anchor-link" href="#Agents-with-Semantic-Kernel">¶</a></h2><p>Semantic Kernel is an <a href="https://learn.microsoft.com/en-us/semantic-kernel/overview/">open-source library from MSFT</a> that lets you build AI agents and integrate the latest AI models with bindings in C#, Python, and Java.</p>
+<h1 id="Agents-with-Semantic-Kernel">Agents with Semantic Kernel<a class="anchor-link" href="#Agents-with-Semantic-Kernel">¶</a></h1><p>Semantic Kernel is an <a href="https://learn.microsoft.com/en-us/semantic-kernel/overview/">open-source library from MSFT</a> that lets you build AI agents and integrate the latest AI models with bindings in C#, Python, and Java.</p>
 </div>
 </div>
 </div>
@@ -8346,7 +8347,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Initializing a Kernel</strong></p>
+<h2 id="Initializing-a-Kernel">Initializing a Kernel<a class="anchor-link" href="#Initializing-a-Kernel">¶</a></h2>
 </div>
 </div>
 </div>
@@ -8391,8 +8392,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Initializing Native Plugins</strong></p>
-<p>Defines types and functions the LLM has access to:</p>
+<h2 id="Initializing-Native-Plugins">Initializing Native Plugins<a class="anchor-link" href="#Initializing-Native-Plugins">¶</a></h2><p>Defines types and functions the LLM has access to:</p>
 </div>
 </div>
 </div>
@@ -8434,8 +8434,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Executing a Standalone Kernel</strong></p>
-<ul>
+<h2 id="Executing-a-Standalone-Kernel">Executing a Standalone Kernel<a class="anchor-link" href="#Executing-a-Standalone-Kernel">¶</a></h2><ul>
 <li>SK bridges the gap by taking the functions the LLM predicted and calling them automatically in our code.</li>
 <li>Under the hood, it uses parallel function calling as the default planner implementation</li>
 </ul>
@@ -8447,7 +8446,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">semantic_kernel.connectors.ai.open_ai</span> <span class="kn">import</span> <span class="n">AzureChatCompletion</span><span class="p">,</span> <span class="n">AzureChatPromptExecutionSettings</span>
@@ -8455,6 +8454,8 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <span class="kn">from</span> <span class="nn">semantic_kernel.connectors.ai.chat_completion_client_base</span> <span class="kn">import</span> <span class="n">ChatCompletionClientBase</span>
 <span class="kn">from</span> <span class="nn">semantic_kernel.contents.chat_history</span> <span class="kn">import</span> <span class="n">ChatHistory</span>
 <span class="kn">from</span> <span class="nn">semantic_kernel.functions.kernel_arguments</span> <span class="kn">import</span> <span class="n">KernelArguments</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="kn">import</span> <span class="nn">xml.dom.minidom</span>
 
 <span class="c1"># Add the plugin to the kernel</span>
 <span class="n">kernel</span><span class="o">.</span><span class="n">add_plugin</span><span class="p">(</span><span class="n">WeatherPlugin</span><span class="p">(),</span> <span class="n">plugin_name</span><span class="o">=</span><span class="s2">"Weather"</span><span class="p">,)</span>
@@ -8477,7 +8478,8 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
   <span class="n">arguments</span><span class="o">=</span><span class="n">KernelArguments</span><span class="p">(),</span>
 <span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="c1"># Print the results</span>
+<span class="n">pretty_xml</span> <span class="o">=</span> <span class="n">xml</span><span class="o">.</span><span class="n">dom</span><span class="o">.</span><span class="n">minidom</span><span class="o">.</span><span class="n">parseString</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span><span class="o">.</span><span class="n">toprettyxml</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"```xml</span><span class="se">\n</span><span class="si">{</span><span class="n">pretty_xml</span><span class="si">}</span><span class="se">\n</span><span class="s2">```"</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Assistant &gt; "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -8490,14 +8492,109 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<div class="highlight"><pre><span></span><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="nt">&lt;chat_history&gt;</span>
+<span class="w">	</span><span class="nt">&lt;message</span><span class="w"> </span><span class="na">role=</span><span class="s">"user"</span><span class="nt">&gt;</span>
+<span class="w">		</span><span class="nt">&lt;text&gt;</span>What's<span class="w"> </span>the<span class="w"> </span>weather<span class="w"> </span>in<span class="w"> </span>Toronto<span class="w"> </span>and<span class="w"> </span>San<span class="w"> </span>Antonio<span class="w"> </span>in<span class="w"> </span>freedom<span class="w"> </span>units?<span class="nt">&lt;/text&gt;</span>
+<span class="w">	</span><span class="nt">&lt;/message&gt;</span>
+<span class="w">	</span><span class="nt">&lt;message</span><span class="w"> </span><span class="na">finish_reason=</span><span class="s">"tool_calls"</span><span class="w"> </span><span class="na">ai_model_id=</span><span class="s">"gpt-35-turbo"</span><span class="w"> </span><span class="na">role=</span><span class="s">"assistant"</span><span class="nt">&gt;</span>
+<span class="w">		</span><span class="nt">&lt;function_call</span><span class="w"> </span><span class="na">id=</span><span class="s">"call_LW0HmXVfYay4jSVbGUKVUJGy"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Weather-get_weather"</span><span class="nt">&gt;</span>{<span class="ni">&amp;quot;</span>location<span class="ni">&amp;quot;</span>:<span class="w"> </span><span class="ni">&amp;quot;</span>Toronto<span class="ni">&amp;quot;</span>,<span class="w"> </span><span class="ni">&amp;quot;</span>unit<span class="ni">&amp;quot;</span>:<span class="w"> </span><span class="ni">&amp;quot;</span>fahrenheit<span class="ni">&amp;quot;</span>}<span class="nt">&lt;/function_call&gt;</span>
+<span class="w">		</span><span class="nt">&lt;function_call</span><span class="w"> </span><span class="na">id=</span><span class="s">"call_E53eDM1cC2sFfhCqhgHJU4E0"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Weather-get_weather"</span><span class="nt">&gt;</span>{<span class="ni">&amp;quot;</span>location<span class="ni">&amp;quot;</span>:<span class="w"> </span><span class="ni">&amp;quot;</span>San<span class="w"> </span>Antonio<span class="ni">&amp;quot;</span>,<span class="w"> </span><span class="ni">&amp;quot;</span>unit<span class="ni">&amp;quot;</span>:<span class="w"> </span><span class="ni">&amp;quot;</span>fahrenheit<span class="ni">&amp;quot;</span>}<span class="nt">&lt;/function_call&gt;</span>
+<span class="w">	</span><span class="nt">&lt;/message&gt;</span>
+<span class="w">	</span><span class="nt">&lt;message</span><span class="w"> </span><span class="na">role=</span><span class="s">"tool"</span><span class="nt">&gt;</span>
+<span class="w">		</span><span class="nt">&lt;function_result</span><span class="w"> </span><span class="na">id=</span><span class="s">"call_LW0HmXVfYay4jSVbGUKVUJGy"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Weather-get_weather"</span><span class="nt">&gt;</span>{'location':<span class="w"> </span>'Toronto',<span class="w"> </span>'unit':<span class="w"> </span>'fahrenheit',<span class="w"> </span>'temperature':<span class="w"> </span>89}<span class="nt">&lt;/function_result&gt;</span>
+<span class="w">	</span><span class="nt">&lt;/message&gt;</span>
+<span class="w">	</span><span class="nt">&lt;message</span><span class="w"> </span><span class="na">role=</span><span class="s">"tool"</span><span class="nt">&gt;</span>
+<span class="w">		</span><span class="nt">&lt;function_result</span><span class="w"> </span><span class="na">id=</span><span class="s">"call_E53eDM1cC2sFfhCqhgHJU4E0"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Weather-get_weather"</span><span class="nt">&gt;</span>{'location':<span class="w"> </span>'San<span class="w"> </span>Antonio',<span class="w"> </span>'unit':<span class="w"> </span>'fahrenheit',<span class="w"> </span>'temperature':<span class="w"> </span>60}<span class="nt">&lt;/function_result&gt;</span>
+<span class="w">	</span><span class="nt">&lt;/message&gt;</span>
+<span class="w">	</span><span class="nt">&lt;message</span><span class="w"> </span><span class="na">finish_reason=</span><span class="s">"stop"</span><span class="w"> </span><span class="na">ai_model_id=</span><span class="s">"gpt-35-turbo"</span><span class="w"> </span><span class="na">role=</span><span class="s">"assistant"</span><span class="nt">&gt;</span>
+<span class="w">		</span><span class="nt">&lt;text&gt;</span>The<span class="w"> </span>current<span class="w"> </span>weather<span class="w"> </span>in<span class="w"> </span>Toronto<span class="w"> </span>is<span class="w"> </span>89°F<span class="w"> </span>and<span class="w"> </span>in<span class="w"> </span>San<span class="w"> </span>Antonio<span class="w"> </span>is<span class="w"> </span>60°F.<span class="nt">&lt;/text&gt;</span>
+<span class="w">	</span><span class="nt">&lt;/message&gt;</span>
+<span class="nt">&lt;/chat_history&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Assistant &gt; The current weather in Toronto is 36°F and in San Antonio is 45°F.
+<pre>Assistant &gt; The current weather in Toronto is 89°F and in San Antonio is 60°F.
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=810bbd3b-324f-4ec2-b7c1-8997de825f5a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Putting-it-all-together">Putting it all together<a class="anchor-link" href="#Putting-it-all-together">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6820041d-161e-4417-9d60-ea38679b9e61">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Semantic Kernel is working closely with Autogen/Taskweaver teams internally to arrive at a framework for defining sane semantics for defining individual agents and groups of agents independent of what LLM provider you choose.</p>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cd196d00-6ab6-4408-8104-fda0b74c4e46">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1"># Define the agent name and instructions</span>
+<span class="n">AGENT_NAME</span> <span class="o">=</span> <span class="s2">"Angela"</span>
+<span class="n">AGENT_INSTRUCTIONS</span> <span class="o">=</span> <span class="s2">"You are head of the party planning committee at Dunder Mifflin."</span>
+
+<span class="c1"># Create the instance of the Kernel</span>
+<span class="n">kernel</span> <span class="o">=</span> <span class="n">Kernel</span><span class="p">()</span>
+
+<span class="c1"># Add the AzureOpenAIChatCompletion AI Service to the Kernel</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">add_service</span><span class="p">(</span><span class="n">AzureChatCompletion</span><span class="p">(</span><span class="n">service_id</span><span class="o">=</span><span class="s2">"agent"</span><span class="p">))</span>
+
+<span class="c1"># Add agent capabilities via plugin(s)</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">add_plugin</span><span class="p">(</span><span class="n">plugin</span><span class="o">=</span><span class="n">CateringPlugin</span><span class="p">(),</span> <span class="n">plugin_name</span><span class="o">=</span><span class="s2">"catering"</span><span class="p">)</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">add_plugin</span><span class="p">(</span><span class="n">plugin</span><span class="o">=</span><span class="n">MusicPlugin</span><span class="p">(),</span> <span class="n">plugin_name</span><span class="o">=</span><span class="s2">"music"</span><span class="p">)</span>
+
+<span class="c1"># Create the agent</span>
+<span class="n">agent</span> <span class="o">=</span> <span class="n">ChatCompletionAgent</span><span class="p">(</span><span class="n">service_id</span><span class="o">=</span><span class="s2">"agent"</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="n">kernel</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">AGENT_NAME</span><span class="p">,</span> <span class="n">instructions</span><span class="o">=</span><span class="n">AGENT_INSTRUCTIONS</span><span class="p">)</span>
+
+<span class="c1"># Define the chat history</span>
+<span class="n">chat</span> <span class="o">=</span> <span class="n">ChatHistory</span><span class="p">()</span>
+
+<span class="c1"># Chat with the agent</span>
+<span class="n">chat</span><span class="o">.</span><span class="n">add_user_message</span><span class="p">(</span><span class="s2">"Help me plan Toby's going away party!"</span><span class="p">)</span>
+
+<span class="c1"># Invoke the agent and update chat history with responses</span>
+<span class="k">async</span> <span class="k">for</span> <span class="n">content</span> <span class="ow">in</span> <span class="n">agent</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">chat</span><span class="p">):</span>
+    <span class="n">chat</span><span class="o">.</span><span class="n">add_message</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fb26966e-5d58-4a47-9d67-f9bae2fe999f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Up-Next:-Retrieval-Augmented-Generation">Up Next: Retrieval Augmented Generation<a class="anchor-link" href="#Up-Next:-Retrieval-Augmented-Generation">¶</a></h2>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4542871d-7616-4b80-bc66-5f0441868a1c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8622,14 +8719,25 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2ffc7af8-ad72-4187-9e53-773e6afdb61f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Up-Next:-Evaluation-Methods-with-Promptflow">Up Next: Evaluation Methods with Promptflow<a class="anchor-link" href="#Up-Next:-Evaluation-Methods-with-Promptflow">¶</a></h3>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8e687cd3-f64a-401f-bbcf-e43b2afe8edb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Promptflow">Promptflow<a class="anchor-link" href="#Promptflow">¶</a></h1>
+<h1 id="Evaluation-Methods-with-Promptflow">Evaluation Methods with Promptflow<a class="anchor-link" href="#Evaluation-Methods-with-Promptflow">¶</a></h1>
 </div>
 </div>
 </div>
@@ -8640,7 +8748,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Prompt flow is a suite of development tools designed to streamline the end-to-end development cycle of LLM-based AI applications, from ideation, prototyping, testing, evaluation to production deployment and monitoring.</p>
+<p>Prompt flow is an <a href="https://microsoft.github.io/promptflow/">open source suite of development tools from MSFT</a> designed to streamline the end-to-end development cycle of LLM-based AI applications.</p>
 </div>
 </div>
 </div>
@@ -8714,11 +8822,8 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Sample that performs RAG on Qdrant documentation and writes a tweet about a given topic.</p>
-<ul>
-<li>Uses a dataset that is already chunked containing bits from Qdrant's documentation</li>
-<li>Leverages prompt templates</li>
-</ul>
+<p>RAG-based flow that looks up documentation and uses that info to write a tweet about a given topic with references.</p>
+<p>(Go to VSCode)</p>
 </div>
 </div>
 </div>
@@ -8759,7 +8864,9 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <pre><code>pf flow test --flow promptflow/qdrant_tweet_flow --inputs topic=Microsoft
 </code></pre>
 <p>Batch running flow against a dataset:</p>
-<pre><code>pf run create --flow promptflow/qdrant_tweet_flow --data promptflow/qdrant_tweet_flow/data.jsonl
+<pre><code>pf run create --flow promptflow/qdrant_tweet_flow \
+--data promptflow/qdrant_tweet_flow/data.jsonl \
+--column-mapping topic='${data.topic}'
 </code></pre>
 </div>
 </div>
@@ -8786,6 +8893,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <li>You can't improve what you don't measure</li>
 <li>Evaluations are also flows and can run against output of previous runs</li>
 </ul>
+<p>(Go to VSCode)</p>
 </div>
 </div>
 </div>
