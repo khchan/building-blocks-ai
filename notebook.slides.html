@@ -7601,9 +7601,9 @@ main {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Right, listen up, you want an omelette?  Crack two eggs, whisk 'em like your life depends on it, chuck in a knob of butter, scramble that lot till it's just set, fold it over, and get out the way. 
+<pre>Right, listen up. You crack two eggs, whisk 'em good. Chuck in a knob of butter in the pan - hot, not bloody scorching -  pour in the eggs. Now scramble it about like you're possessed till it's almost set, then fold it over and get it outta there. 
 
-And for God's sake, don't call me when it burns! 
+You want fancy? Add cheese or somethin'.  Don't muck it up.  
 </pre>
 </div>
 </div>
@@ -7744,8 +7744,8 @@ And for God's sake, don't call me when it burns!
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Prediction: salty
 token 1:
-	top_logprobs: s, probability: 99.92
-	top_logprobs: S, probability: 0.08
+	top_logprobs: s, probability: 99.94
+	top_logprobs: S, probability: 0.05
 	top_logprobs: sweet, probability: 0.0
 token 2:
 	top_logprobs: alty, probability: 100.0
@@ -7848,17 +7848,17 @@ token 2:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Savory broth steams
-Soft noodles and fresh herbs float
-Pho warms body, soul
+<pre>Steaming bowl of pho
+Savoury broth and thin noodles
+Warm comfort in spoon
 
-Steaming bowl of pho
-Rich broth, tender meats, and herbs
-Comfort in a bowl
-
-Steaming broth and noodles
-Herbs and spices blending well
+Broth simmers gently
+Rice noodles and herbs enhance
 Pho warms the soul deep
+
+Savory broth and noodles
+Tender meats and fresh herbs float
+Warm comfort in a bowl
 
 </pre>
 </div>
@@ -7942,11 +7942,11 @@ Pho warms the soul deep
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'name': 'Pancakes with Berries and Syrup', 'style': 'American classic'}
-{'name': 'Avocado Toast with Egg', 'style': 'Healthy and modern'}
-{'name': 'Scrambled Eggs with Smoked Salmon', 'style': 'Gourmet breakfast'}
+<pre>{'name': 'Pancakes', 'style': 'American'}
+{'name': 'Avocado Toast', 'style': 'Modern'}
+{'name': 'Oatmeal with Berries', 'style': 'Healthy'}
+{'name': 'Scrambled Eggs with Bacon', 'style': 'Classic'}
 {'name': 'Breakfast Burrito', 'style': 'Tex-Mex'}
-{'name': 'Yogurt Parfait with Granola and Fruit', 'style': 'Light and refreshing'}
 </pre>
 </div>
 </div>
@@ -8066,11 +8066,11 @@ Pho warms the soul deep
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Dish: Pancakes with maple syrup, Style: American
+<pre>Dish: Pancakes with Maple Syrup, Style: American
 Dish: Breakfast Burrito, Style: Mexican
-Dish: Eggs Benedict, Style: Continental
-Dish: Smoked Salmon and Bagel, Style: Jewish Deli
-Dish: Yogurt Parfait with granola and berries, Style: Healthy
+Dish: Avocado Toast, Style: Modern/Healthy
+Dish: Scrambled Eggs with Bacon, Style: Classic American
+Dish: Yogurt Parfait, Style: Greek/Breakfast Bowls
 </pre>
 </div>
 </div>
@@ -8230,8 +8230,8 @@ Dish: Yogurt Parfait with granola and berries, Style: Healthy
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Function(arguments='{"location": "Toronto", "unit": "celsius"}', name='get_weather')
-Function(arguments='{"location": "Dallas", "unit": "celsius"}', name='get_weather')
+<pre>Function(arguments='{"location": "Toronto, ON", "unit": "celsius"}', name='get_weather')
+Function(arguments='{"location": "Dallas, TX", "unit": "celsius"}', name='get_weather')
 Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </pre>
 </div>
@@ -8300,9 +8300,9 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class '__main__.Weather'&gt; location='Toronto, Canada' units='celsius'
-&lt;class '__main__.Weather'&gt; location='Dallas, Texas' units='celsius'
-&lt;class '__main__.GoogleSearch'&gt; query='super bowl winner'
+<pre>&lt;class '__main__.Weather'&gt; location='Toronto' units='celsius'
+&lt;class '__main__.Weather'&gt; location='Dallas' units='celsius'
+&lt;class '__main__.GoogleSearch'&gt; query='Super Bowl winner'
 </pre>
 </div>
 </div>
@@ -8491,7 +8491,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Assistant &gt; The current weather in Toronto is 73°F and in San Antonio is 34°F.
+<pre>Assistant &gt; The current weather in Toronto is 36°F and in San Antonio is 45°F.
 </pre>
 </div>
 </div>
@@ -8719,7 +8719,6 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <li>Uses a dataset that is already chunked containing bits from Qdrant's documentation</li>
 <li>Leverages prompt templates</li>
 </ul>
-<p>(Go to VSCode)</p>
 </div>
 </div>
 </div>
@@ -8735,6 +8734,21 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 </div>
 </div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=09f9fb93-66fa-4c97-b825-08a0263ca42b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Built in UIs greatly help with inspecting each phase of a test</li>
+<li>Tracking token usage</li>
+<li>Batch runs for testing a flow against a dataset</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a348ee97-e7ef-4d2b-be8f-0d4287c32990">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8747,7 +8761,6 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <p>Batch running flow against a dataset:</p>
 <pre><code>pf run create --flow promptflow/qdrant_tweet_flow --data promptflow/qdrant_tweet_flow/data.jsonl
 </code></pre>
-<p>(Go to VSCode)</p>
 </div>
 </div>
 </div>
@@ -8762,34 +8775,48 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5bd3c44a-7d75-4e70-bf92-760f75e759c7">
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ae9aa1a4-d5c7-4fe0-9ae1-ae778eb9c77d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"hello world"</span><span class="p">)</span>
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>You can't improve what you don't measure</li>
+<li>Evaluations are also flows and can run against output of previous runs</li>
+</ul>
 </div>
 </div>
 </div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d79210b4-eb83-47a9-99ee-c01f21588d81">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>hello world
-</pre>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Batch running evaluation flow against existing run:</p>
+<pre><code>pf run create --flow promptflow/evaluation_flow \
+--data promptflow/evaluation_flow/data.jsonl \
+--column-mapping sentiment='${data.sentiment}' tweet='${run.outputs.tweet}' \
+--run &lt;RUN_NAME&gt;
+</code></pre>
 </div>
 </div>
 </div>
-</div></div></section></section>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=08750187-323f-45b3-b24c-bccae79b9f7b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Thank-You!">Thank You!<a class="anchor-link" href="#Thank-You!">¶</a></h1><p>Code + Slides can be found here: <a href="https://github.com/khchan/building-blocks-ai">https://github.com/khchan/building-blocks-ai</a></p>
+</div>
+</div>
+</div>
+</div></section></section>
 </div>
 </div>
 </main>

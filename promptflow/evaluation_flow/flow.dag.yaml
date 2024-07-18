@@ -1,0 +1,45 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  sentiment:
+    type: string
+    default: positive
+  tweet:
+    type: string
+    default: "I like turtles! #turtles"
+outputs:
+  graded_sentiment:
+    type: string
+    reference: ${grade.output}
+  correctness:
+    type: string
+    reference: ${line_process.output}
+nodes:
+- name: grade
+  type: llm
+  source:
+    type: code
+    path: grade.jinja2
+  inputs:
+    deployment_name: gpt-4
+    temperature: 0
+    tweet: ${inputs.tweet}
+  connection: azure-open-ai
+  api: chat
+- name: line_process
+  type: python
+  source:
+    type: code
+    path: line_process.py
+  inputs:
+    groundtruth: ${inputs.sentiment}
+    prediction: ${grade.output}
+- name: aggregate
+  type: python
+  source:
+    type: code
+    path: aggregate.py
+  inputs:
+    processed_results: ${line_process.output}
+  aggregation: true
