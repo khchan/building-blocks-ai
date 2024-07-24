@@ -7,10 +7,9 @@ def ollama(tweet_request: str, model: str) -> str:
 
     response = ollama_client.chat.completions.create(
         model = model,
-        temperature = 1.0,
         messages = [
             {
-                "role": "system",
+                "role": "user",
                 "content": tweet_request
             }
         ]

@@ -7504,6 +7504,7 @@ main {
 <li>User Messages</li>
 <li>System Messages</li>
 <li>Assistant Messages</li>
+<li>Tool Call/Response Messages</li>
 </ul>
 </div>
 </div>
@@ -7597,19 +7598,13 @@ main {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>For crying out loud, can't you see I'm busy running a kitchen here?! Fine. You want to know how to make an omelette, well it's not exactly brain surgery, is it?
+<pre>For crying out loud, can't you even manage to make a simple omelette? Alright, listen up, love. Beat two eggs together in a bowl. Not three, not four, TWO! Get it? Then add a splash of milk and some salt and pepper. Don't overdo it, you numpty! You're not trying to drown the bloody thing!
 
-You'll need eggs. Get two of 'em. Beat 'em together in a bowl until they're nice and smooth. Don't overbeat, you numpty, or you'll end up with egg whites that are as stiff as your bloody personality.
+Heat a non-stick pan with some butter. Not too much, mind! I don't want to have to send it back because you've turned it into a grease pit. Once it's hot, pour in your egg mixture and let it cook for about 30 seconds.
 
-Next, heat up a non-stick pan over medium heat. No, not the one that's been sittin' on the back burner for three days, the other one! And make sure it's hot, you hear me?
+Now, here's the bit where most of you muppets screw up: don't overfill the omelette! You should be able to fold it easily without making a mess. Fill with whatever cheese or ham you like, but keep it simple, love!
 
-Pour in the eggs and let them cook until they're almost set. Don't stir 'em too much or you'll end up with a bloody scramble.
-
-Now, here's where most of you muppets go wrong. Add some fillings – cheese, herbs, what have you – but don't overdo it! You want to be able to fold the omelette in half without makin' a right old mess of it.
-
-Fold that omelette up and serve it. And for the love of all that's holy, don't come cryin' to me if it doesn't turn out right!
-
-Now, are you done botherin' me with this trivial nonsense?! Get back to work, I've got a kitchen to run!</pre>
+Fold it in half and cook for another 10 seconds. Then, get it out of my kitchen before I have to come over there and show you how it's done proper!</pre>
 </div>
 </div>
 </div>
@@ -7665,7 +7660,6 @@ Now, are you done botherin' me with this trivial nonsense?! Get back to work, I'
 <li>Classification: Set confidence thresholds based on probabilities</li>
 <li>Retrieval Evaluation: Self-evaluation with confidence scores</li>
 <li>Autocomplete: Assist in word suggestion as a user types</li>
-<li>Calculating Perplexity: Compare confidence of results across different prompts</li>
 </ul>
 </div>
 </div>
@@ -7750,8 +7744,8 @@ Now, are you done botherin' me with this trivial nonsense?! Get back to work, I'
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Prediction: sweet
 token 1:
-	top_logprobs: sweet, probability: 99.25
-	top_logprobs: s, probability: 0.72
+	top_logprobs: sweet, probability: 98.6
+	top_logprobs: s, probability: 1.37
 	top_logprobs: Sweet, probability: 0.02
 </pre>
 </div>
@@ -7850,17 +7844,17 @@ token 1:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Savory broth and herbs
-Tender noodles, fragrant steam rise
-Pho warms the soul's core
+<pre>Noodles in broth, steam rise
+Rich flavors of herbs and meat
+Pho warms body and soul
 
-Savory broth simmered
-Tender noodles, herbs abound
-Pho warms the soul's depths
+Broth simmers gently
+Noodles soak up rich flavor
+Pho warms the soul well
 
-Steaming bowl of pho
-Noodles, herbs, and broth embrace
-Warm comfort in a bowl
+Broth simmers gently,
+Noodles swirl in savory broth,
+Pho warms body and soul.
 
 </pre>
 </div>
@@ -7944,11 +7938,11 @@ Warm comfort in a bowl
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'name': 'Pancakes with Fresh Fruit', 'style': 'American'}
-{'name': 'Eggs Benedict', 'style': 'Continental'}
-{'name': 'Avocado Toast', 'style': 'Health-Conscious'}
-{'name': 'Breakfast Burrito', 'style': 'Mexican'}
-{'name': 'Full English Breakfast', 'style': 'Traditional British'}
+<pre>{'name': 'Scrambled Eggs', 'style': 'Classic American'}
+{'name': 'Avocado Toast', 'style': 'Healthy Fusion'}
+{'name': 'French Toast', 'style': 'Sweet Crepes'}
+{'name': 'Breakfast Burrito', 'style': 'Mexican Street Food'}
+{'name': 'Quiche Lorraine', 'style': 'French Bistro'}
 </pre>
 </div>
 </div>
@@ -8069,10 +8063,10 @@ Warm comfort in a bowl
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Dish: Pancakes, Style: American
-Dish: Avocado Toast, Style: Veggie
-Dish: Eggs Benedict, Style: French
-Dish: Yogurt Parfait, Style: Healthy
+Dish: Waffles, Style: Belgian
 Dish: Breakfast Burrito, Style: Mexican
+Dish: Eggs Benedict, Style: Continental
+Dish: French Toast, Style: European
 </pre>
 </div>
 </div>
@@ -8204,10 +8198,6 @@ Dish: Breakfast Burrito, Style: Mexican
     <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-35-turbo"</span><span class="p">,</span>
     <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
         <span class="p">{</span>
-            <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span> 
-            <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"You must always use tools"</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
             <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span>
             <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"What is the weather in toronto and dallas and who won the super bowl?"</span><span class="p">,</span>
         <span class="p">}</span>
@@ -8274,10 +8264,6 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
     <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-35-turbo"</span><span class="p">,</span>
     <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
         <span class="p">{</span>
-            <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span> 
-            <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"You must always use tools"</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
             <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span>
             <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"What is the weather in toronto and dallas and who won the super bowl?"</span><span class="p">,</span>
         <span class="p">}</span>
@@ -8300,14 +8286,14 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>&lt;class '__main__.Weather'&gt; location='Toronto' units='celsius'
-&lt;class '__main__.Weather'&gt; location='Dallas' units='fahrenheit'
+&lt;class '__main__.Weather'&gt; location='Dallas' units='celsius'
 &lt;class '__main__.GoogleSearch'&gt; query='super bowl winner'
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6d6032bb-df22-47ab-ae90-eb58ee238cc0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8318,7 +8304,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7be0d34f-6e2b-44f9-aff6-2d5672674807">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8507,18 +8493,18 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <span class="w">	</span><span class="nt">&lt;message</span><span class="w"> </span><span class="na">role=</span><span class="s">"user"</span><span class="nt">&gt;</span>
 <span class="w">		</span><span class="nt">&lt;text&gt;</span>What's<span class="w"> </span>the<span class="w"> </span>weather<span class="w"> </span>in<span class="w"> </span>Toronto<span class="w"> </span>and<span class="w"> </span>San<span class="w"> </span>Antonio<span class="w"> </span>in<span class="w"> </span>freedom<span class="w"> </span>units?<span class="nt">&lt;/text&gt;</span>
 <span class="w">	</span><span class="nt">&lt;/message&gt;</span>
-<span class="w">	</span><span class="nt">&lt;message</span><span class="w"> </span><span class="na">finish_reason=</span><span class="s">"tool_calls"</span><span class="w"> </span><span class="na">role=</span><span class="s">"assistant"</span><span class="w"> </span><span class="na">ai_model_id=</span><span class="s">"gpt-35-turbo"</span><span class="nt">&gt;</span>
-<span class="w">		</span><span class="nt">&lt;function_call</span><span class="w"> </span><span class="na">id=</span><span class="s">"call_vQk2USVlbLgJHY3hnLjv9aTd"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Weather-get_weather"</span><span class="nt">&gt;</span>{<span class="ni">&amp;quot;</span>location<span class="ni">&amp;quot;</span>:<span class="w"> </span><span class="ni">&amp;quot;</span>Toronto<span class="ni">&amp;quot;</span>,<span class="w"> </span><span class="ni">&amp;quot;</span>unit<span class="ni">&amp;quot;</span>:<span class="w"> </span><span class="ni">&amp;quot;</span>fahrenheit<span class="ni">&amp;quot;</span>}<span class="nt">&lt;/function_call&gt;</span>
-<span class="w">		</span><span class="nt">&lt;function_call</span><span class="w"> </span><span class="na">id=</span><span class="s">"call_9TpTXVrmnfZibiNrPyKQ29hV"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Weather-get_weather"</span><span class="nt">&gt;</span>{<span class="ni">&amp;quot;</span>location<span class="ni">&amp;quot;</span>:<span class="w"> </span><span class="ni">&amp;quot;</span>San<span class="w"> </span>Antonio<span class="ni">&amp;quot;</span>,<span class="w"> </span><span class="ni">&amp;quot;</span>unit<span class="ni">&amp;quot;</span>:<span class="w"> </span><span class="ni">&amp;quot;</span>fahrenheit<span class="ni">&amp;quot;</span>}<span class="nt">&lt;/function_call&gt;</span>
+<span class="w">	</span><span class="nt">&lt;message</span><span class="w"> </span><span class="na">role=</span><span class="s">"assistant"</span><span class="w"> </span><span class="na">finish_reason=</span><span class="s">"tool_calls"</span><span class="w"> </span><span class="na">ai_model_id=</span><span class="s">"gpt-35-turbo"</span><span class="nt">&gt;</span>
+<span class="w">		</span><span class="nt">&lt;function_call</span><span class="w"> </span><span class="na">id=</span><span class="s">"call_NskC8a2wFdKKfB6A4uCtqFgV"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Weather-get_weather"</span><span class="nt">&gt;</span>{<span class="ni">&amp;quot;</span>location<span class="ni">&amp;quot;</span>:<span class="w"> </span><span class="ni">&amp;quot;</span>Toronto<span class="ni">&amp;quot;</span>,<span class="w"> </span><span class="ni">&amp;quot;</span>unit<span class="ni">&amp;quot;</span>:<span class="w"> </span><span class="ni">&amp;quot;</span>fahrenheit<span class="ni">&amp;quot;</span>}<span class="nt">&lt;/function_call&gt;</span>
+<span class="w">		</span><span class="nt">&lt;function_call</span><span class="w"> </span><span class="na">id=</span><span class="s">"call_6XFYnOT9xIbf06FQ3HRS08hO"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Weather-get_weather"</span><span class="nt">&gt;</span>{<span class="ni">&amp;quot;</span>location<span class="ni">&amp;quot;</span>:<span class="w"> </span><span class="ni">&amp;quot;</span>San<span class="w"> </span>Antonio<span class="ni">&amp;quot;</span>,<span class="w"> </span><span class="ni">&amp;quot;</span>unit<span class="ni">&amp;quot;</span>:<span class="w"> </span><span class="ni">&amp;quot;</span>fahrenheit<span class="ni">&amp;quot;</span>}<span class="nt">&lt;/function_call&gt;</span>
 <span class="w">	</span><span class="nt">&lt;/message&gt;</span>
 <span class="w">	</span><span class="nt">&lt;message</span><span class="w"> </span><span class="na">role=</span><span class="s">"tool"</span><span class="nt">&gt;</span>
-<span class="w">		</span><span class="nt">&lt;function_result</span><span class="w"> </span><span class="na">id=</span><span class="s">"call_vQk2USVlbLgJHY3hnLjv9aTd"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Weather-get_weather"</span><span class="nt">&gt;</span>{'location':<span class="w"> </span>'Toronto',<span class="w"> </span>'unit':<span class="w"> </span>'fahrenheit',<span class="w"> </span>'temperature':<span class="w"> </span>26}<span class="nt">&lt;/function_result&gt;</span>
+<span class="w">		</span><span class="nt">&lt;function_result</span><span class="w"> </span><span class="na">id=</span><span class="s">"call_NskC8a2wFdKKfB6A4uCtqFgV"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Weather-get_weather"</span><span class="nt">&gt;</span>{'location':<span class="w"> </span>'Toronto',<span class="w"> </span>'unit':<span class="w"> </span>'fahrenheit',<span class="w"> </span>'temperature':<span class="w"> </span>60}<span class="nt">&lt;/function_result&gt;</span>
 <span class="w">	</span><span class="nt">&lt;/message&gt;</span>
 <span class="w">	</span><span class="nt">&lt;message</span><span class="w"> </span><span class="na">role=</span><span class="s">"tool"</span><span class="nt">&gt;</span>
-<span class="w">		</span><span class="nt">&lt;function_result</span><span class="w"> </span><span class="na">id=</span><span class="s">"call_9TpTXVrmnfZibiNrPyKQ29hV"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Weather-get_weather"</span><span class="nt">&gt;</span>{'location':<span class="w"> </span>'San<span class="w"> </span>Antonio',<span class="w"> </span>'unit':<span class="w"> </span>'fahrenheit',<span class="w"> </span>'temperature':<span class="w"> </span>66}<span class="nt">&lt;/function_result&gt;</span>
+<span class="w">		</span><span class="nt">&lt;function_result</span><span class="w"> </span><span class="na">id=</span><span class="s">"call_6XFYnOT9xIbf06FQ3HRS08hO"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Weather-get_weather"</span><span class="nt">&gt;</span>{'location':<span class="w"> </span>'San<span class="w"> </span>Antonio',<span class="w"> </span>'unit':<span class="w"> </span>'fahrenheit',<span class="w"> </span>'temperature':<span class="w"> </span>92}<span class="nt">&lt;/function_result&gt;</span>
 <span class="w">	</span><span class="nt">&lt;/message&gt;</span>
-<span class="w">	</span><span class="nt">&lt;message</span><span class="w"> </span><span class="na">finish_reason=</span><span class="s">"stop"</span><span class="w"> </span><span class="na">role=</span><span class="s">"assistant"</span><span class="w"> </span><span class="na">ai_model_id=</span><span class="s">"gpt-35-turbo"</span><span class="nt">&gt;</span>
-<span class="w">		</span><span class="nt">&lt;text&gt;</span>The<span class="w"> </span>current<span class="w"> </span>weather<span class="w"> </span>in<span class="w"> </span>Toronto<span class="w"> </span>is<span class="w"> </span>26°F<span class="w"> </span>and<span class="w"> </span>in<span class="w"> </span>San<span class="w"> </span>Antonio<span class="w"> </span>is<span class="w"> </span>66°F.<span class="nt">&lt;/text&gt;</span>
+<span class="w">	</span><span class="nt">&lt;message</span><span class="w"> </span><span class="na">role=</span><span class="s">"assistant"</span><span class="w"> </span><span class="na">finish_reason=</span><span class="s">"stop"</span><span class="w"> </span><span class="na">ai_model_id=</span><span class="s">"gpt-35-turbo"</span><span class="nt">&gt;</span>
+<span class="w">		</span><span class="nt">&lt;text&gt;</span>The<span class="w"> </span>current<span class="w"> </span>weather<span class="w"> </span>in<span class="w"> </span>Toronto<span class="w"> </span>is<span class="w"> </span>60°F<span class="w"> </span>and<span class="w"> </span>in<span class="w"> </span>San<span class="w"> </span>Antonio<span class="w"> </span>it<span class="w"> </span>is<span class="w"> </span>92°F.<span class="nt">&lt;/text&gt;</span>
 <span class="w">	</span><span class="nt">&lt;/message&gt;</span>
 <span class="nt">&lt;/chat_history&gt;</span>
 </pre></div>
@@ -8527,7 +8513,7 @@ Function(arguments='{"query": "super bowl winner"}', name='google_search')
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Assistant &gt; The current weather in Toronto is 26°F and in San Antonio is 66°F.
+<pre>Assistant &gt; The current weather in Toronto is 60°F and in San Antonio it is 92°F.
 </pre>
 </div>
 </div>
@@ -8923,9 +8909,9 @@ Distances of nearest vectors: [0.84317274 0.88134068 0.97033998]
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div> <div class="plotly-graph-div" id="84acc80c-cdb3-4ec2-ab5d-b9b5f8fc638b" style="height:525px; width:100%;"></div> <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("84acc80c-cdb3-4ec2-ab5d-b9b5f8fc638b")) {                    Plotly.newPlot(                        "84acc80c-cdb3-4ec2-ab5d-b9b5f8fc638b",                        [{"marker":{"opacity":0.5,"size":5},"mode":"markers","name":"Database Vectors","x":[0.3745401188473625,0.15599452033620265,0.020584494295802447,0.18340450985343382,0.6118528947223795,0.7851759613930136,0.6075448519014384,0.8083973481164611,0.12203823484477883,0.662522284353982],"y":[0.9507143064099162,0.05808361216819946,0.9699098521619943,0.3042422429595377,0.13949386065204183,0.19967378215835974,0.17052412368729153,0.3046137691733707,0.4951769101112702,0.31171107608941095],"z":[0.7319939418114051,0.8661761457749352,0.8324426408004217,0.5247564316322378,0.29214464853521815,0.5142344384136116,0.06505159298527952,0.09767211400638387,0.034388521115218396,0.5200680211778108],"type":"scatter3d"},{"marker":{"color":"red","size":8},"mode":"markers","name":"Nearest Vectors","x":[0.3745401188473625,0.662522284353982,0.7851759613930136],"y":[0.9507143064099162,0.31171107608941095,0.19967378215835974],"z":[0.7319939418114051,0.5200680211778108,0.5142344384136116],"type":"scatter3d"},{"marker":{"color":"green","size":10},"mode":"markers","name":"Query Vector","x":[[0.9695846277645586]],"y":[[0.7751328233611146]],"z":[[0.9394989415641891]],"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"margin":{"l":0,"r":0,"b":0,"t":30},"title":{"text":"3D Visualization of Semantic Similarity"},"scene":{"xaxis":{"title":{"text":"Dimension 1"}},"yaxis":{"title":{"text":"Dimension 2"}},"zaxis":{"title":{"text":"Dimension 3"}}}},                        {"responsive": true}                    ).then(function(){
+<div> <div class="plotly-graph-div" id="22a37a6b-bc8a-4cc8-acfa-6e48d0b13de3" style="height:525px; width:100%;"></div> <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("22a37a6b-bc8a-4cc8-acfa-6e48d0b13de3")) {                    Plotly.newPlot(                        "22a37a6b-bc8a-4cc8-acfa-6e48d0b13de3",                        [{"marker":{"opacity":0.5,"size":5},"mode":"markers","name":"Database Vectors","x":[0.3745401188473625,0.15599452033620265,0.020584494295802447,0.18340450985343382,0.6118528947223795,0.7851759613930136,0.6075448519014384,0.8083973481164611,0.12203823484477883,0.662522284353982],"y":[0.9507143064099162,0.05808361216819946,0.9699098521619943,0.3042422429595377,0.13949386065204183,0.19967378215835974,0.17052412368729153,0.3046137691733707,0.4951769101112702,0.31171107608941095],"z":[0.7319939418114051,0.8661761457749352,0.8324426408004217,0.5247564316322378,0.29214464853521815,0.5142344384136116,0.06505159298527952,0.09767211400638387,0.034388521115218396,0.5200680211778108],"type":"scatter3d"},{"marker":{"color":"red","size":8},"mode":"markers","name":"Nearest Vectors","x":[0.3745401188473625,0.662522284353982,0.7851759613930136],"y":[0.9507143064099162,0.31171107608941095,0.19967378215835974],"z":[0.7319939418114051,0.5200680211778108,0.5142344384136116],"type":"scatter3d"},{"marker":{"color":"green","size":10},"mode":"markers","name":"Query Vector","x":[[0.9695846277645586]],"y":[[0.7751328233611146]],"z":[[0.9394989415641891]],"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"margin":{"l":0,"r":0,"b":0,"t":30},"title":{"text":"3D Visualization of Semantic Similarity"},"scene":{"xaxis":{"title":{"text":"Dimension 1"}},"yaxis":{"title":{"text":"Dimension 2"}},"zaxis":{"title":{"text":"Dimension 3"}}}},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('84acc80c-cdb3-4ec2-ab5d-b9b5f8fc638b');
+var gd = document.getElementById('22a37a6b-bc8a-4cc8-acfa-6e48d0b13de3');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -9056,14 +9042,6 @@ Interactive Component: Use ipywidgets to make the query vector adjustable intera
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Initial Search Indices: [9 3 4 7 5]
-Reranked Indices: [3 4 5 9 7]
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>VBox(children=(FloatSlider(value=0.5, description='Dim 1', max=1.0, step=0.01), FloatSlider(value=0.5, descrip…</pre>
 </div>
 </div>
@@ -9179,22 +9157,10 @@ Reranked Indices: [3 4 5 9 7]
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>RAG-based flow that looks up documentation and uses that info to write a tweet about a given topic with references.</p>
-<p>(Go to VSCode)</p>
 </div>
 </div>
 </div>
-</div></div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d1af5aec-232d-4264-b466-0cf83d5ff896">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Experimentation-+-Tracing">Experimentation + Tracing<a class="anchor-link" href="#Experimentation-+-Tracing">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="fragment">
+</div></div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=09f9fb93-66fa-4c97-b825-08a0263ca42b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -9221,7 +9187,7 @@ Reranked Indices: [3 4 5 9 7]
 </code></pre>
 <p>Batch running flow against a dataset:</p>
 <pre><code>pf run create --flow promptflow/qdrant_tweet_flow \
---data promptflow/qdrant_tweet_flow/data.jsonl \
+--data promptflow/evaluation_flow/data.jsonl \
 --column-mapping topic='${data.topic}'
 </code></pre>
 </div>
@@ -9246,10 +9212,9 @@ Reranked Indices: [3 4 5 9 7]
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>You can't improve what you don't measure</li>
 <li>Evaluations are also flows and can run against output of previous runs</li>
+<li>With a combination of validation datasets and run outputs, we can set thresholds for success</li>
 </ul>
-<p>(Go to VSCode)</p>
 </div>
 </div>
 </div>
@@ -9263,8 +9228,8 @@ Reranked Indices: [3 4 5 9 7]
 <p>Batch running evaluation flow against existing run:</p>
 <pre><code>pf run create --flow promptflow/evaluation_flow \
 --data promptflow/evaluation_flow/data.jsonl \
---column-mapping sentiment='${data.sentiment}' tweet='${run.outputs.tweet}' \
---run &lt;RUN_NAME&gt;
+--column-mapping relevance_threshold='${data.relevance_threshold}' tweet='${run.outputs.tweet}' references='${run.outputs.references}' \
+--run qdrant_tweet_flow_variant_0_20240724_190216_041293
 </code></pre>
 </div>
 </div>

@@ -35,5 +35,5 @@ nodes:
     path: ollama.py
   inputs:
     tweet_request: ${tweet_prompt.output}
-    model: gemma2:9b
+    model: llama3.1:8b
   aggregation: false

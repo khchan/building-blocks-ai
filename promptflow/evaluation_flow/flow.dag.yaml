@@ -2,14 +2,22 @@ $schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
 environment:
   python_requirements_txt: requirements.txt
 inputs:
-  sentiment:
-    type: string
-    default: positive
+  relevance_threshold:
+    type: double
+    default: 50
   tweet:
     type: string
     default: "I like turtles! #turtles"
+  references:
+    type: list
+    default:
+    - id: 100
+      text: turtles
+      url: https://en.wikipedia.org/wiki/Turtle
+      titles:
+      - Turtle
 outputs:
-  graded_sentiment:
+  relevance:
     type: string
     reference: ${grade.output}
   correctness:
@@ -25,6 +33,9 @@ nodes:
     deployment_name: gpt-4
     temperature: 0
     tweet: ${inputs.tweet}
+    references: ${inputs.references}
+    response_format:
+      type: json_object
   connection: azure-open-ai
   api: chat
 - name: line_process
@@ -33,8 +44,8 @@ nodes:
     type: code
     path: line_process.py
   inputs:
-    groundtruth: ${inputs.sentiment}
     prediction: ${grade.output}
+    groundtruth: ${inputs.relevance_threshold}
 - name: aggregate
   type: python
   source:

@@ -1,7 +1,8 @@
 from promptflow.core import tool
+import json
 
 @tool
-def line_process(groundtruth: str, prediction: str):
+def line_process(groundtruth: float, prediction: str) -> bool:
     """
     This tool processes the prediction of a single line and returns the processed result.
 
@@ -9,7 +10,4 @@ def line_process(groundtruth: str, prediction: str):
     :param prediction: the prediction of a single line.
     """
 
-    # Add your line processing logic here
-    processed_result = "Correct" if groundtruth.lower() == prediction.lower() else "Incorrect"
-
-    return processed_result
+    return "Correct" if json.loads(prediction).get("score", 0.0) >= groundtruth else "Incorrect"
