@@ -30,7 +30,7 @@ nodes:
     type: code
     path: grade.jinja2
   inputs:
-    deployment_name: gpt-4
+    deployment_name: gpt-4o
     temperature: 0
     tweet: ${inputs.tweet}
     references: ${inputs.references}

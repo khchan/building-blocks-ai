@@ -16,6 +16,7 @@ source venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
+4. Create a `.env` file with the values specified in `.env.example`
 
 ## Development
 Run jupyter lab to bring up an interactive environment:
